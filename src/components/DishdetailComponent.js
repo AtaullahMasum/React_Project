@@ -132,10 +132,12 @@ class CommentForm extends Component {
         });
     }
 
-    handleSubmit(value) {
-        console.log('Current State is: ' + JSON.stringify(value));
-        alert('Current State is: ' + JSON.stringify(value));
+    handleSubmit(values) {
+        //console.log('Current State is: ' + JSON.stringify(value));
+        //alert('Current State is: ' + JSON.stringify(value));
         ///event.preventDefault();
+        this.toggleModal();
+        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment );
     }
 
     render() {
